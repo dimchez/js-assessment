@@ -15,14 +15,13 @@ define(function() {
         return [];
       }
 
-      return Object.keys(obj).reduce(collectValues(obj), []);
+      return Object.keys(obj).map(collectValues(obj));
     }
   };
 
   function collectValues(obj) {
-    return function(values, key) {
-      values.push(key + ': ' + obj[key]);
-      return values;
+    return function(key) {
+      return key + ': ' + obj[key];
     };
   }
 });
