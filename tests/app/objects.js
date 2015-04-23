@@ -58,6 +58,8 @@ define([
 
       var obj = new C();
 
+      expect(answers.iterate()).to.eql([]);
+      expect(answers.iterate({})).to.eql([]);
       expect(answers.iterate(obj)).to.eql([ 'foo: bar', 'baz: bim' ]);
     });
   });
